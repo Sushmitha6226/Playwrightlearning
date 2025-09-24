@@ -14,7 +14,7 @@ require('dotenv').config()
  */
 export default defineConfig({
 
-  timeout : 60000,
+  // timeout : 60000,
   expect: {
       timeout : 30000
   },
@@ -32,7 +32,12 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://localhost:3000',
+    baseURL: 'https://opensource-demo.orangehrmlive.com',
+    // headless : false,
+    testIdAttribute : "aria-label",
+
+    screenshot : "on",
+    video : "on",
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -42,7 +47,9 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'],
+          viewport: { width: 1920, height: 1080 },
+      },
     },
 
     {
@@ -56,20 +63,25 @@ export default defineConfig({
     },
 
     /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
+  //   {
+  //     name: 'Mobile Chrome',
+  //     use: { ...devices['Pixel 5'] },
+  //   },
+  //   {
+  //     name: 'Mobile Safari',
+  //     use: { ...devices['iPhone 12'] },
+  //   },
+  //   {
+  //     name: 'Microsoft Edge',
+  //     use: { ...devices['Desktop Edge'], channel: 'msedge', 
+  //       viewport: { width: 1920, height: 1080 },
+  //       },
+  //   },
+    {
+      name: 'Google Chrome',
+      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+    }
 
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
     
   ],
 
