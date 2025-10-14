@@ -1,7 +1,7 @@
-// // objectname = {
+//  objectname = {
 
-// //     key : "abcde"
-// // }
+//   key : "abcde"
+// }
 
 
 // const credentials = {
@@ -16,11 +16,11 @@
 //     }
 // }
 
-// // console.log(credentials.username)
+//  console.log(credentials.username)
 
-// // console.log(credentials.password)
+// console.log(credentials.password)
 
-// // console.log(credentials.data.mothername)
+//  console.log(credentials.data.mothername)
 
 // console.log(credentials['password'])
 
@@ -40,20 +40,20 @@
 
 
 
-const menuitems = {
+// const menuitems = {
 
-    menu1 : "Admin",
-    menu2 : "PIM",
-    menu3 : "Leave"
-}
+//     menu1 : "Admin",
+//     menu2 : "PIM",
+//     menu3 : "Leave"
+// }
 
- menuitems['menu4'] = "recruitment"
+//  menuitems['menu4'] = "recruitment"
 
- for(let item in menuitems){
+//  for(let item in menuitems){
 
-    console.log("Loops starts" )
+//     console.log("Loops starts" )
 
-    console.log(item +" :" + menuitems[item])
+//     console.log(item +" :" + menuitems[item])
 
-    console.log("Loop ends ")
-}
+//     console.log("Loop ends ")
+// }
